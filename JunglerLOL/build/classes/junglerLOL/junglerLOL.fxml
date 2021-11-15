@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="657.0" style="-fx-background-color: #181838;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="junglerLOL.junglerLOLController">
+   <children>
+      <HBox layoutX="-2.0" prefHeight="30.0" prefWidth="658.0" style="-fx-background-color: #222831;" styleClass="Nice">
+         <children>
+            <HBox layoutX="0" prefHeight="30.0" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets left="5" top="5" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" preserveRatio="true" smooth="true">
+                     <image>
+                        <Image url="@../img/SummonerSmite.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="25.0" prefWidth="96.0" styleClass="title" text="JunglerLOL" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" onMouseClicked="#minimize" prefHeight="30.0" prefWidth="30.0" styleClass="minimize" text="_" textFill="WHITE" />
+            <Label alignment="CENTER" onMouseClicked="#close" prefHeight="30.0" prefWidth="30.0" styleClass="title" text="X" textFill="WHITE" />
+         </children>
+      </HBox>
+      <ImageView fx:id="imgPath" fitHeight="467.0" fitWidth="616.0" layoutX="19.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="-1.0" layoutY="550.0" prefHeight="50.0" prefWidth="658.0" style="-fx-background-color: #181838;">
+         <children>
+            <ImageView fitHeight="46.0" fitWidth="63.0" layoutX="200.0" layoutY="2.0" onMouseClicked="#BlueBuffClicked" preserveRatio="true" smooth="true">
+               <image>
+                  <Image url="@../img/BlueBuff.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="63.0" layoutX="447.0" layoutY="2.0" onMouseClicked="#RedBuffClicked" preserveRatio="true" smooth="true">
+               <image>
+                  <Image url="@../img/RedBuff.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="ZoneSearch" focusColor="WHITE" layoutX="266.0" layoutY="10.0" prefHeight="31.0" prefWidth="141.0" promptText="Name of Champion" unFocusColor="WHITE" />
+            <Label alignment="CENTER" layoutX="407.0" layoutY="11.0" onMouseClicked="#searchiconClicked" prefHeight="30.0" prefWidth="30.0" styleClass="search" text="🔍" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" layoutY="30.0" prefHeight="50.0" prefWidth="657.0" style="-fx-background-color: #181838;">
+         <children>
+            <Text fill="#b2b2b2" layoutX="137.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Win Rate">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="WinRate" layoutX="137.0" layoutY="2.0" prefHeight="31.0" prefWidth="71.0" text="--_--%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text fill="#b2b2b2" layoutX="237.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pick Rate">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="PickRate" layoutX="237.0" layoutY="2.0" prefHeight="31.0" prefWidth="71.0" text="--_--%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text fill="#b2b2b2" layoutX="341.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ban Rate">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="BanRate" layoutX="341.0" layoutY="2.0" prefHeight="31.0" prefWidth="71.0" text="--_--%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Text fill="#b2b2b2" layoutX="435.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jungle Rank">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="JungleRank" layoutX="445.0" layoutY="2.0" prefHeight="31.0" prefWidth="71.0" text="--_--%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
