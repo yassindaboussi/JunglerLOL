@@ -95,6 +95,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <ImageView fx:id="imgChampion" fitHeight="50.0" fitWidth="62.0" layoutX="68.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
    </children>

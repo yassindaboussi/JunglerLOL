@@ -52,11 +52,13 @@ public class junglerLOLController implements Initializable {
     @FXML
     private JFXTextField ZoneSearch;
 
-    public String imgRedSide, imgBlueSide, ChampionName;
+    public String imgRedSide, imgBlueSide, ChampionName, imgChampionn;
     public static final String[] TN = {"Olaf", "Poppy", "Evelynn", "Shaco", "Hecarim", "Rumble", "Lee Sin", "Jarvan IV", "KhaZix", "Nocturne", "Kayn",
         "Kindred", "Elise", "Ekko", "Zed", "Fiddlesticks", "Nidalee", "Diana", "Udyr", "Warwick", "Nunu", "Wukong", "Morgana", "Gragas", "Taliyah", "Ivern", "Lillia",
         "Trundle", "Volibear", "Xin Zhao", "Viego", "Rengar", "Rammus", "Sejuani", "Karthus", "Shyvana", "Zac", "Graves", "Vi", "Amumu", "Talon", "Master Yi", "Rek Sai",
         "Skarner", "Jax"};
+    @FXML
+    private ImageView imgChampion;
 
     /**
      * Initializes the controller class.
@@ -104,6 +106,9 @@ public class junglerLOLController implements Initializable {
             PickRate.setAlignment(Pos.CENTER);
             BanRate.setAlignment(Pos.CENTER);
             JungleRank.setAlignment(Pos.CENTER);
+
+            Elements ElimgChampion = document.select("img[id=image-23-24]");
+            imgChampionn = ElimgChampion.attr("src");
             if (imgSrc == "Blue") {
                 new Thread(() -> {
                     try {
@@ -113,6 +118,13 @@ public class junglerLOLController implements Initializable {
                         BufferedImage propertImage = ImageIO.read(connection.getInputStream());
                         Image imgsss = SwingFXUtils.toFXImage(propertImage, null);
                         imgPath.setImage(imgsss);
+                        /////
+                        URL imageUrll = new URL(imgChampionn);
+                        HttpURLConnection connectionn = (HttpURLConnection) imageUrll.openConnection();
+                        connectionn.setRequestProperty("User-Agent", "Mozilla/5.0");
+                        BufferedImage propertImagee = ImageIO.read(connectionn.getInputStream());
+                        Image imgssss = SwingFXUtils.toFXImage(propertImagee, null);
+                        imgChampion.setImage(imgssss);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -127,6 +139,13 @@ public class junglerLOLController implements Initializable {
                         BufferedImage propertImage = ImageIO.read(connection.getInputStream());
                         Image imgsss = SwingFXUtils.toFXImage(propertImage, null);
                         imgPath.setImage(imgsss);
+                        /////
+                        URL imageUrll = new URL(imgChampionn);
+                        HttpURLConnection connectionn = (HttpURLConnection) imageUrll.openConnection();
+                        connectionn.setRequestProperty("User-Agent", "Mozilla/5.0");
+                        BufferedImage propertImagee = ImageIO.read(connectionn.getInputStream());
+                        Image imgssss = SwingFXUtils.toFXImage(propertImagee, null);
+                        imgChampion.setImage(imgssss);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -154,7 +173,6 @@ public class junglerLOLController implements Initializable {
 //            Setimg(ChampionName, "Red");
 //        }
 //    }
-
     @FXML
     private void BlueBuffClicked(MouseEvent event) {
         Setimg(ChampionName, "Blue");
